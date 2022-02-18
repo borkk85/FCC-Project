@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,47 +27,13 @@
     --fs-body: 1rem;
 
     --transition: 0.3s;
+    --variable-name: value;
 }
 
-@media screen and (max-width: 720px) {
-  nav {
-    padding: 1.5rem 1rem;
-  }
-   nav ul {
-    position: fixed;
-    background-color: var(--bg-color);
-    flex-direction: column;
-    top: 86px;
-    left: 10%;
-    width: 80%;
-    text-align: center;
-    transform: translateX(120%);
-    transition: transform 0.5s ease-in;
-  }
-
-   nav ul li {
-    margin: 8px;
-  }
+selector {
+  property: var(--variable-name);
 }
 
-@media screen and (max-width: 420px) {
-  .hero img {
-    height: 37.5rem;
-    width: 23rem;
-  }
-
-  .bio {
-    width: 18.3rem;
-  }
-
-  .project-container {
-    width: 17.875rem;
-  }
-
-  .contact-form-container {
-    max-width: 17.75rem;
-  }
-} 
 
 ul {
     list-style: none;
@@ -96,60 +60,42 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5rem 3rem;
-    background-color: var(--bg-color);
+    padding: 2rem 3.5rem;
+    background-color: var(--clr-bg);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav h1 {
-    color: var(--clr-dark);
+    color: var(--clr-accent);
 }
 
 nav a {
-    color: var(--clr-dark);
+    color: var(--clr-accent);
     transition: var(--transition);
 }
 
 nav a:hover {
     color: var(--clr-dark);
-    border-bottom: 2px solid var(--clr-light);
+    border-bottom: 2px solid var(--clr-dark);
 }
 
 nav ul {
     display: flex;
     gap: 1.9rem;
-    position: fixed;
-    background-color: var(--bg-color);
-    flex-direction: column;
-    top: 86px;
-    left: 10%;
-    width: 80%;
-    text-align: center;
-    transform: translateX(120%);
-    transition: transform 0.5s ease-in;
 }
 
 nav ul li {
     font-weight: var(--fw-bold);
-    margin: 8px;
 }
 
 .burger-menu {
-    color: var(--clr-dark);
+    color: var(--clr-accent);
     font-size: var(--fs-h2);
     border: 0;
     background-color: transparent;
     cursor: pointer;
     display: none;
 }
-
- .burger-menu {
-    display: block;
-  }
-
-  nav ul.show {
-    transform: translateX(0);
-  }
 
 .hero {
     display: flex;
@@ -161,8 +107,8 @@ nav ul li {
 }
 
 .hero img {
-    height: 40.5rem;
-    width: 40.5rem;
+    height: 35rem;
+    width: 35rem;
 }
 
 .bio {
@@ -265,7 +211,7 @@ nav ul li {
 
 .input-field::placeholder {
   padding: 0.5rem;
-  color: var(--clr-dark);
+  color: var(--clr-accent);
 }
 
 .submit-btn {
@@ -286,21 +232,107 @@ nav ul li {
   cursor: pointer;
 }
 
-.scroll-up {
-  position: fixed;
-  right: 0.5%;
-  bottom: 3%;
-  cursor: pointer;
-}
-
-.up-arrow {
-  width: 3rem;
-  height: 3rem;
-}
-
 footer {
   background-color: var(--bg-color);
   padding: 1.25rem;
   text-align: center;
   margin: 2rem 0 0;
 }
+
+.scroll-up {
+  position: fixed;
+  right: 0.5%;
+  bottom: 3%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.up-arrow {
+
+  width: 3rem;
+  height: 3rem;
+}
+
+@media screen and (max-width: 720px) {
+  nav {
+    padding: 1.5rem 1rem;
+  }
+
+   nav ul {
+    position: fixed;
+    background-color: var(--clr-bg);
+    flex-direction: column;
+    top: 86px;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    transform: translateX(120%);
+    transition: transform 0.5s ease-in;
+  }
+
+   nav ul li {
+    margin: 8px;
+  }
+
+   .burger-menu {
+    display: block;
+  }
+
+  nav ul.show {
+    transform: translateX(0);
+  }
+
+.hero {
+    margin-top: -4rem;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero img {
+        height: 25rem;
+        width: 25rem;
+    }
+
+  .bio {
+    margin-top: 2rem;
+    width: 20.5rem;
+  }
+
+   .more-about {
+    margin-top: 2rem;
+    padding: 1rem 3.5rem;
+  }
+
+  .more-about h2 {
+    text-align: center;
+  }
+
+  .more-about p {
+    text-align: justify;
+  }
+
+.icon {
+    width: 5.875rem;
+    height: 5.25rem;
+  }
+
+ .contact-form-container {
+    max-width: 23.75rem;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .hero img {
+    height: 25rem;
+    width: 23rem;
+  }
+
+  .bio {
+    width: 18.3rem;
+  }
+
+  .contact-form-container {
+    max-width: 17.75rem;
+  }
+} 
