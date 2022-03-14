@@ -130,6 +130,9 @@ nav ul li {
 .more-about {
     background-color: var(--clr-bg);
     padding:  2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .more-about h2 {
@@ -140,6 +143,7 @@ nav ul li {
 .more-about p {
     line-height: 1.7rem;
     padding: 0.4rem;
+    text-align: center;
 }
 
 .skills {
